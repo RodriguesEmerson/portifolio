@@ -1,0 +1,29 @@
+#home{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: calc(100vh - 60px);
+    border-bottom: 1px solid lightgray;
+
+    #presentation-text{
+        font-size: 1.8em;
+
+        h1{
+            color: $primaryColor;
+        }
+
+        h2{
+            font-weight: 100;
+            font-size: 1em;
+        }
+    }
+    .cover-image{
+        width: 100%;
+    }
+    .image-home{
+        width: 45%;
+    }
+}
+
+
+    

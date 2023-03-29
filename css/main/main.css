@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  font-weight: bold;
+  background-color: white;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+#logo {
+  width: 60px;
+}
+
+#nav-bar ul {
+  padding-right: 30px;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#nav-bar ul .link-nav {
+  margin-left: 15px;
+}
+
+#nav-bar ul a {
+  text-decoration: none;
+  color: #383838;
+}
+
+#home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: calc(100vh - 60px);
+  border-bottom: 1px solid lightgray;
+}
+
+#home #presentation-text {
+  font-size: 1.8em;
+}
+
+#home #presentation-text h1 {
+  color: #00386d;
+}
+
+#home #presentation-text h2 {
+  font-weight: 100;
+  font-size: 1em;
+}
+
+#home .cover-image {
+  width: 100%;
+}
+
+#home .image-home {
+  width: 45%;
+}
+/*# sourceMappingURL=main.css.map */

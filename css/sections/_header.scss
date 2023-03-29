@@ -1,0 +1,30 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+#logo{
+    width: 60px;
+}
+
+#nav-bar ul{
+    padding-right: 30px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+
+    .link-nav{
+        margin-left: 15px;
+    }
+
+    & a{
+        text-decoration: none;
+        color: rgb(56, 56, 56);
+    }
+}
