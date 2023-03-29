@@ -60,7 +60,10 @@ header {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   height: 100vh;
+  padding: 10px;
   border-bottom: 1px solid lightgray;
 }
 
@@ -86,7 +89,21 @@ header {
 }
 
 #home .image-home {
+  min-width: 400px;
   width: 45%;
+}
+
+@media screen and (max-width: 900px) {
+  #presentation-text {
+    font-size: 1.3em !important;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  #home {
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
 }
 
 #projects {
@@ -253,8 +270,8 @@ header {
       -ms-flex-align: center;
           align-items: center;
   padding: 15px;
-  max-width: 720px;
   margin: auto;
+  border-bottom: 1px solid lightgray;
 }
 
 #about h3 {
@@ -270,7 +287,94 @@ header {
 }
 
 #about article {
+  max-width: 720px;
   text-indent: 30px;
   line-height: 1.4em;
+}
+
+#contact {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding: 10px;
+  height: calc(100vh - 60px);
+}
+
+#contact h3 {
+  position: absolute;
+  top: 12px;
+  font-size: 1.7em;
+  line-height: 40px;
+  text-align: center;
+  color: #00386d;
+}
+
+#contact > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#contact a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 250px;
+  height: 40px;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+  background-color: #00386d;
+  color: white;
+  border-radius: 3px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+#contact #LinkedIn {
+  margin-bottom: 10px;
+}
+
+#contact #LinkedIn:hover {
+  background-color: #001e3a;
+}
+
+#contact #GitHub {
+  background-color: #292828;
+}
+
+#contact #GitHub:hover {
+  background-color: #131313;
+}
+
+#contact img {
+  min-width: 400px;
+  width: 50%;
 }
 /*# sourceMappingURL=main.css.map */
