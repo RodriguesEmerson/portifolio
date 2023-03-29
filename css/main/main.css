@@ -7,6 +7,10 @@
 }
 
 header {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,7 +22,7 @@ header {
           align-items: center;
   height: 60px;
   font-weight: bold;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.932);
   padding: 10px;
   border-bottom: 1px solid lightgray;
 }
@@ -56,12 +60,16 @@ header {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: calc(100vh - 60px);
+  height: 100vh;
   border-bottom: 1px solid lightgray;
 }
 
 #home #presentation-text {
   font-size: 1.8em;
+}
+
+#home #presentation-text span {
+  font-size: 0.9em;
 }
 
 #home #presentation-text h1 {
@@ -79,5 +87,190 @@ header {
 
 #home .image-home {
   width: 45%;
+}
+
+#projects {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+  background-color: #00386d;
+  min-height: calc(100vh - 60px);
+  padding: 70px 10px 10px;
+}
+
+#projects h3 {
+  position: absolute;
+  top: 15px;
+  font-size: 1.7em;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+}
+
+#projects .project {
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
+  font-weight: 400;
+  overflow: hidden;
+  padding: 10px;
+  width: 400px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#projects .project-upside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+#projects .project-upside .glob {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+  width: 160px;
+  margin-right: 10px;
+  background-color: #df6c00;
+  border-radius: 50%;
+}
+
+#projects .project-upside .glob img {
+  width: 70%;
+}
+
+#projects .project-upside .project-title {
+  padding-top: 8px;
+  font-size: 1.2em;
+  color: #df6c00;
+}
+
+#projects .project-upside .link-lang {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5px 0;
+}
+
+#projects .project-upside .link-lang .project-link {
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  width: 110px;
+  font-size: 0.9em;
+  line-height: 24px;
+  color: #00386d;
+  border: 1px solid #00386d;
+  border-radius: 8px;
+  -webkit-transition: color 200ms;
+  transition: color 200ms;
+}
+
+#projects .project-upside .link-lang .project-link span {
+  width: 100%;
+  left: 65%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  position: absolute;
+  z-index: 5;
+}
+
+#projects .project-upside .link-lang .project-link:hover {
+  color: white;
+}
+
+#projects .project-upside .link-lang .project-link::before {
+  position: absolute;
+  z-index: 0;
+  content: '';
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00386d;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+  scale: 0 1;
+}
+
+#projects .project-upside .link-lang .project-link:hover::before {
+  scale: 1;
+}
+
+#projects .project-upside .link-lang .languages {
+  cursor: default;
+  margin-left: 10px;
+  text-align: center;
+  height: 26px;
+  width: 110px;
+  padding: 2px 3px 0;
+  background-color: #00386d;
+  border-radius: 8px;
+}
+
+#projects .project-upside .link-lang .languages-icon {
+  width: 18px;
+  margin-top: 2px;
+}
+
+#projects .project-cover {
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 3px;
+}
+
+#about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+  max-width: 720px;
+  margin: auto;
+}
+
+#about h3 {
+  color: #00386d;
+  font-size: 1.7em;
+  font-weight: 600;
+}
+
+#about img {
+  margin: 20px 0;
+  max-width: 300px;
+  border-radius: 50%;
+}
+
+#about article {
+  text-indent: 30px;
+  line-height: 1.4em;
 }
 /*# sourceMappingURL=main.css.map */
