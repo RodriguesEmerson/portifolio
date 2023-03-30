@@ -1,19 +1,20 @@
-const icones = 'imagens/icones'
-const cover = 'imagens/capas-dos-projetos'
-const javascript = 'https://rodriguesemerson.github.io/JAVASCRIPT/desafios'
+const icones = 'imagens/icones';
+const cover = 'imagens/capas-dos-projetos';
+const javascript = 'https://rodriguesemerson.github.io/JAVASCRIPT/desafios';
+const html = 'https://rodriguesemerson.github.io/Html-e-CSS/projetos';
 const datas = [
     {
     title: 'Kanban',
     imgGlob: `${icones}/kanban.png`,
     desc: 'Criei este projeto para praticar e obter novos conhecimentos.',
-    link: '#',
+    link: 'https://rodriguesemerson.github.io/JAVASCRIPT/projetos/clone-trello/',
     langs: ['HTML', 'CSS', 'JS'],
     cover: `${cover}/kanban2.png`,
-    resumo: "Com o layout inspirado no Trello, este site permite, criar cards, tags para os cards e movê-los livremente na vertical e entre colunas. Obs: Os dados são salvos no localstorage."
+    resumo: "Com o layout inspirado no Trello, este site permite criar cards, tags e movê-los livremente na vertical e entre colunas, além de ser possível editar e excluí-los."
     },
 
     {
-    title: 'Mini Organizado Financeiro',
+    title: 'Mini Organizador Financeiro',
     imgGlob: `${icones}/finance-organizer.png`,
     desc: 'Aqui, além de praticar tabelas, aprendi muito sobre manipulação de dados!',
     link: `${javascript}/finance/`,
@@ -33,13 +34,33 @@ const datas = [
     },
 
     {
+    title: 'Ecommerce',
+    imgGlob: `${icones}/ecommerce.png`,
+    desc: 'Aqui aprendi muito sobre CSS e HTML, mas tem um pouco de javascript também.',
+    link: `${html}/ecommerce/`,
+    langs: ['HTML', 'CSS', 'JS'],
+    cover: `${cover}/ecommerce.png`,
+    resumo: "Este site não tem muitas interações, mas dediquei muito na criação do layout, aqui descobri mais sobre o maravilhoso mundo do display flex e grid."
+    }, 
+
+    {
+    title: 'Site de Receitas',
+    imgGlob: `${icones}/site-receitas.png`,
+    desc: 'Este é mais um projeto focado em HTML e CSS.',
+    link: `${html}/site-receitas/`,
+    langs: ['HTML', 'CSS', 'JS'],
+    cover: `${cover}/site-receitas.png`,
+    resumo: "Este site um código apenas para mostrar e sconder o menu. Sendo totalmente estático, não tem muitas interações, foquei mais em deixá-lo responsivo."
+    },
+
+    {
     title: 'To do List',
     imgGlob: `${icones}/to-do-list.png`,
     desc: 'Essa To do List, criei qundo ainda estava bem no início de estudos com JavaScritp.',
     link: `${javascript}/to-do-list/`,
     langs: ['HTML', 'CSS', 'JS'],
     cover: `${cover}/to-do-list.png`,
-    resumo: "Foi neste projeto que aprendi como atualizar a seleção do dom com elementos dinâmicos. Projeto muito desafiador pra quem está começando."
+    resumo: "Foi neste projeto que aprendi como atualizar a seleção do dom com elementos dinâmicos. Me dediquei bastante neste projeto."
     },
 
     {
@@ -59,7 +80,7 @@ const datas = [
     link: `${javascript}/blog/`,
     langs: ['HTML', 'CSS', 'JS'],
     cover: `${cover}/blog-news.png`,
-    resumo: "O blog ficou bem legal, mas o servidor funcina apenas com localhost. Cada notícia tem uma url que joga para a segunda página que faz a requisição de mais dados da notícia."
+    resumo: "O blog ficou bem legal, mas o servidor funcina apenas com localhost. Cada notícia tem uma url que joga para a segunda página que faz a requisição de mais dados da notícia e a preenche."
     }, 
 
 ]
