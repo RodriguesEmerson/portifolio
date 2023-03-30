@@ -22,16 +22,16 @@
         <nav id="nav-bar">
             <ul>
                 <li class="link-nav">
-                    <a href="#">Início</a>
+                    <a href="home">Início</a>
                 </li>
                 <li class="link-nav">
-                    <a href="#">Projetos</a>
+                    <a href="projects">Projetos</a>
                 </li>
                 <li class="link-nav">
-                    <a href="#">Sobre</a>
+                    <a href="about">Sobre</a>
                 </li>
                 <li class="link-nav">
-                    <a href="#">Contato</a>
+                    <a href="contact">Contato</a>
                 </li>
             </ul>
         </nav>
@@ -181,5 +181,23 @@
             </div>
         </section>
     </main>
+
+    <script type="module" src="js/main.js"></script>
+    <script>
+        const ancora = document.querySelectorAll('.link-nav a')
+        let id = ''
+        for(let ind = 0; ind < ancora.length; ind++){
+            ancora[ind].addEventListener('click', function(event){
+                event.preventDefault();
+                id = ancora[ind].getAttribute('href');
+                const page = document.querySelector(`#${id}`).offsetTop - 60;
+                window.scroll({
+                    behavior: 'smooth',
+                    top: page
+                })
+            })
+        }
+        
+    </script>
 </body>
 </html>
