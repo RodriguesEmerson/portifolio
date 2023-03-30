@@ -50,7 +50,7 @@ const datas = [
     link: `${html}/site-receitas/`,
     langs: ['HTML', 'CSS', 'JS'],
     cover: `${cover}/site-receitas.png`,
-    resumo: "Este site um código apenas para mostrar e sconder o menu. Sendo totalmente estático, não tem muitas interações, foquei mais em deixá-lo responsivo."
+    resumo: "Este site tem apenas um código para mostrar e esconder o menu, o resto é html e css. Sendo totalmente estático, não tem muitas interações, foquei mais em deixá-lo responsivo."
     },
 
     {
