@@ -21,6 +21,8 @@ function loadProjects() {
             divLinkLang.setAttribute('class', 'link-lang');
         const projectLink = document.createElement('a');
             projectLink.setAttribute('class', 'project-link');
+            projectLink.setAttribute('rel', 'external');
+            projectLink.setAttribute('target', '_blank')
         const projectLinkText = document.createElement('span');
         const divLangs = document.createElement('div');
             divLangs.setAttribute('class', 'languages');

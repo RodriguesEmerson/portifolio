@@ -24,11 +24,24 @@ header{
     justify-content: space-between;
 
     .link-nav{
-        margin-left: 15px;
+        margin-left: 10px;
+        border-radius: 3px;
+        transition: 200ms;
+        &:active{
+            background-color: rgb(214, 214, 214);
+        }
     }
 
-    & a{
+    & a {
+        display: block;
+       padding: 5px;
         text-decoration: none;
         color: rgb(56, 56, 56);
+    }    
+}
+
+@media screen and (min-width: 960px) {
+    .link-nav:hover{
+        background-color: rgb(214, 214, 214);
     }
 }

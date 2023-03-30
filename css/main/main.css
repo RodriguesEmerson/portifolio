@@ -43,12 +43,27 @@ header {
 }
 
 #nav-bar ul .link-nav {
-  margin-left: 15px;
+  margin-left: 10px;
+  border-radius: 3px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+#nav-bar ul .link-nav:active {
+  background-color: #d6d6d6;
 }
 
 #nav-bar ul a {
+  display: block;
+  padding: 5px;
   text-decoration: none;
   color: #383838;
+}
+
+@media screen and (min-width: 960px) {
+  .link-nav:hover {
+    background-color: #d6d6d6;
+  }
 }
 
 #home {
@@ -122,7 +137,7 @@ header {
   gap: 15px;
   background-color: #00386d;
   min-height: calc(100vh - 60px);
-  padding: 70px 10px 10px;
+  padding: 70px 10px 80px;
 }
 
 #projects h3 {
@@ -141,8 +156,14 @@ header {
   overflow: hidden;
   padding: 10px;
   width: 400px;
+  height: 455px !important;
   background-color: white;
   border-radius: 10px;
+}
+
+#projects .delay {
+  -webkit-animation: delayCard 1000ms forwards;
+          animation: delayCard 1000ms forwards;
 }
 
 #projects .project-upside {
@@ -152,7 +173,9 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 10px;
+  margin: -10px -10px 10px;
+  padding: 5px;
+  color: #3d3d3d;
 }
 
 #projects .project-upside .glob {
@@ -165,21 +188,20 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100px;
-  width: 160px;
+  width: 100px;
   margin-right: 10px;
-  background-color: #df6c00;
+  background-color: rgba(245, 222, 179, 0);
   border-radius: 50%;
 }
 
 #projects .project-upside .glob img {
-  width: 70%;
+  width: 75%;
 }
 
 #projects .project-upside .project-title {
   padding-top: 8px;
   font-size: 1.2em;
-  color: #df6c00;
+  color: #530168;
 }
 
 #projects .project-upside .link-lang {
@@ -196,8 +218,8 @@ header {
   width: 110px;
   font-size: 0.9em;
   line-height: 24px;
-  color: #00386d;
-  border: 1px solid #00386d;
+  color: #530168;
+  border: 1px solid #530168;
   border-radius: 8px;
   -webkit-transition: color 200ms;
   transition: color 200ms;
@@ -224,7 +246,7 @@ header {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #00386d;
+  background-color: #530168;
   -webkit-transform-origin: left;
           transform-origin: left;
   -webkit-transition: 400ms;
@@ -243,7 +265,7 @@ header {
   height: 26px;
   width: 110px;
   padding: 2px 3px 0;
-  background-color: #00386d;
+  background-color: #530168;
   border-radius: 8px;
 }
 
@@ -256,6 +278,37 @@ header {
   margin: 10px 0;
   width: 100%;
   border-radius: 3px;
+}
+
+#btn-see-more {
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  font-size: 1.2em;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  background: rgba(8, 36, 73, 0.63);
+  border: none;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+#btn-see-more:hover {
+  background-color: rgba(1, 20, 44, 0.63);
+}
+
+@-webkit-keyframes delayCard {
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes delayCard {
+  0% {
+    opacity: 0;
+  }
 }
 
 #about {
