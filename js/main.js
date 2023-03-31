@@ -46,16 +46,15 @@ function loadProjects() {
             logo.setAttribute('class', 'languages-icon');
             logo.setAttribute('src', `imagens/logos/logo${lang}.png`);
             logo.setAttribute('alt', `logo ${lang}`);
-
             divLangs.appendChild(logo);
         });
 
+        //Insere icones de responsividade
         project.respons.forEach(icone => {
             const icon = document.createElement('img');
             icon.setAttribute('class', 'responsive-icon');
             icon.setAttribute('src', `imagens/logos/logo${icone}.png`);
             icon.setAttribute('alt', `icone ${icone}`);
-
             divResponsive.appendChild(icon)
         });
         

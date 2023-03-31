@@ -94,12 +94,34 @@ const datas = [
     {
     title: 'Blog de Notícias',
     imgGlob: `${icones}/blog-news.png`,
-    desc: 'Construi este blog para aprender sobre mais sobre APIs.',
+    desc: 'Construi este blog para aprender mais sobre APIs.',
     link: `${javascript}/blog/`,
     langs: ['HTML', 'CSS', 'JS'],
     respons: ['PC'],
     cover: `${cover}/blog-news.png`,
     resumo: "O blog ficou bem legal, mas o servidor funcina apenas com localhost. Cada notícia tem uma url que joga para a segunda página que faz a requisição de mais dados da notícia e a preenche."
+    }, 
+
+    {
+    title: 'Gerador de Recibos',
+    imgGlob: `${icones}/recibo.png`,
+    desc: 'Neste caso, eu estava precisando de um gerador de recibo do meu jeito.',
+    link: `${html}/gerador-de-recibo/`,
+    langs: ['HTML', 'CSS', 'JS'],
+    respons: ['PC', 'CELL'],
+    cover: `${cover}/recibo.png`,
+    resumo: "Criei este sistema para gerar recibos pro lugar onde trabalho, pois queria um recibo personalizado com os dados que eu precisasse."
+    }, 
+
+    {
+    title: 'Em Breve',
+    imgGlob: `${icones}/breve.png`,
+    desc: 'Em breve colocarei aqui meu próximo projeto!',
+    link: `#`,
+    langs: [],
+    respons: [],
+    cover: `${cover}/breve.png`,
+    resumo: "Em meu GibHub tem alguns projetos que não coloco aqui, como jogos e outros estudos!"
     }, 
 
     
