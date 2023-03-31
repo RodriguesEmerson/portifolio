@@ -45,13 +45,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100px;
-        margin-right: 10px;
-        background-color:rgba(245, 222, 179, 0);
+        width: fit-content;
+        margin: 0 15px 0 10px;
+        background-color:rgba(255, 255, 255, 0);
         border-radius: 50%;
 
         img{
-            width: 75%;
+            width: 40px;
         }
     }
 
@@ -94,6 +94,22 @@
             height: 26px;
             width: 110px;
             padding: 2px 3px 0;
+            background-color: $thirdColor;
+            border-radius: 8px;
+    
+            &-icon{
+                width: 18px;
+                margin-top: 2px;
+            }
+        }
+
+        .responsive{
+            cursor: default;
+            margin-left: 10px;
+            text-align: center;
+            height: 26px;
+            width: 50px;
+            padding: 2px 3px 0; 
             background-color: $thirdColor;
             border-radius: 8px;
     

@@ -26,6 +26,8 @@ function loadProjects() {
         const projectLinkText = document.createElement('span');
         const divLangs = document.createElement('div');
             divLangs.setAttribute('class', 'languages');
+        const divResponsive = document.createElement('div');
+            divResponsive.setAttribute('class', 'responsive');
         const projectCover = document.createElement('img');
             projectCover.setAttribute('class', 'project-cover');
         const lastP = document.createElement('p');
@@ -37,13 +39,24 @@ function loadProjects() {
         projectLinkText.textContent = 'Ver projeto';
         projectCover.setAttribute('src', `${project.cover}`);
         lastP.textContent = project.resumo;
-        project.langs.forEach(lang => {
-            const icon = document.createElement('img');
-            icon.setAttribute('class', 'languages-icon');
-            icon.setAttribute('src', `imagens/logos/logo${lang}.png`);
-            icon.setAttribute('alt', `logo ${lang}`)
 
-            divLangs.appendChild(icon)
+        //Insere os icones das "linguagens" usadas
+        project.langs.forEach(lang => {
+            const logo = document.createElement('img');
+            logo.setAttribute('class', 'languages-icon');
+            logo.setAttribute('src', `imagens/logos/logo${lang}.png`);
+            logo.setAttribute('alt', `logo ${lang}`);
+
+            divLangs.appendChild(logo);
+        });
+
+        project.respons.forEach(icone => {
+            const icon = document.createElement('img');
+            icon.setAttribute('class', 'responsive-icon');
+            icon.setAttribute('src', `imagens/logos/logo${icone}.png`);
+            icon.setAttribute('alt', `icone ${icone}`);
+
+            divResponsive.appendChild(icon)
         });
         
 
@@ -57,6 +70,7 @@ function loadProjects() {
                     divLinkLang.appendChild(projectLink);
                         projectLink.append(projectLinkText)
                     divLinkLang.appendChild(divLangs)
+                    divLinkLang.appendChild(divResponsive)
         divProject.appendChild(projectCover);
         divProject.appendChild(lastP);
 
