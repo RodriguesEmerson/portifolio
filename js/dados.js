@@ -48,10 +48,20 @@ const datas = [
     imgGlob: `${icones}/site-receitas.png`,
     desc: 'Este é mais um projeto focado em HTML e CSS.',
     link: `${html}/site-receitas/`,
-    langs: ['HTML', 'CSS', 'JS'],
+    langs: ['HTML', 'CSS'],
     cover: `${cover}/site-receitas.png`,
     resumo: "Este site tem apenas um código para mostrar e esconder o menu, o resto é html e css. Sendo totalmente estático, não tem muitas interações, foquei mais em deixá-lo responsivo."
     },
+
+    {
+    title: 'Portiólio de Fotos',
+    imgGlob: `${icones}/photography.png`,
+    desc: 'Este projeto foi um divisor muito um divisor de águas.',
+    link: `${html}/photography-site/paginas/`,
+    langs: ['HTML', 'CSS', 'JS'],
+    cover: `${cover}/photography.png`,
+    resumo: "Foi aqui que aprendi muito sobre css grid e modal. Este site tem um código que verifica cada fotografia para colocá-las com o row-span correto, pois as glerias foram criadas com ccs grid."
+    }, 
 
     {
     title: 'To do List',
@@ -70,7 +80,7 @@ const datas = [
     link: `${javascript}/calculadoratwo/`,
     langs: ['HTML', 'CSS', 'JS'],
     cover: `${cover}/calculator.png`,
-    resumo: "Eu não queria uma calculadora que calculasse apenas dois números por vez, foi aqui que aprendi usar RegEx. Essa é a segunda versão, fiz novamente para praticar."
+    resumo: 'Eu não queria uma calculadora que calculasse apenas dois números por vez, foi aqui que aprendi a usar RegEx. Essa é a segunda versão, fiz novamente para praticar.'
     }, 
     
     {
@@ -82,6 +92,8 @@ const datas = [
     cover: `${cover}/blog-news.png`,
     resumo: "O blog ficou bem legal, mas o servidor funcina apenas com localhost. Cada notícia tem uma url que joga para a segunda página que faz a requisição de mais dados da notícia e a preenche."
     }, 
+
+    
 
 ]
 //colocar icone pc e responsivo
