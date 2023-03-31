@@ -1,6 +1,7 @@
 import datas from './dados.js';
 const projects = document.querySelector('#projects');
-const btnSeeMore = document.querySelector('#btn-see-more')
+const btnSeeMore = document.querySelector('#btn-see-more');
+let  animatedElements;
 
 let start = 0;
 let show = 3;
@@ -8,10 +9,17 @@ let addMore = 2;
 if(window.innerWidth > 851){show = 5; addMore = 4};
 if(window.innerWidth > 1266){show = 8; addMore = 3};
 if(window.innerWidth > 1681){show = 11; addMore = 4};
-if(show >)
+
+let animation = false;
+
 
 //Fuções para carregar so projetos na página projetos.
 function loadProjects() {
+    if(show >= datas.length){
+        show = datas.length - 1;
+        btnSeeMore.style.display = 'none';
+        projects.style.paddingBottom = '10px';
+    } 
 
     for (let i = start; i <= show; i++){
         const project = datas[i];
@@ -20,6 +28,7 @@ function loadProjects() {
     // datas.forEach(project => {
         const divProject = document.createElement('div');
             divProject.setAttribute('class', 'project');
+            divProject.classList.add('toAnimate')
         const divProjectUpside = document.createElement('div');
             divProjectUpside.setAttribute('class', 'project-upside');
         const divGlob = document.createElement('div');
@@ -87,49 +96,71 @@ function loadProjects() {
         divProject.appendChild(lastP);
 
         projects.appendChild(divProject);
-        divProject.classList.add('delay')
-
+        if(animation){
+            divProject.classList.add('animate')
+        } 
     }
-}
 
+    animatedElements = document.querySelectorAll('.toAnimate')
+
+}
 loadProjects();
 
 btnSeeMore.addEventListener('click', () => {
+    start++
     show = show + addMore;
-    const topAtual = projects.offsetTop;
+    animation = true;
+    const topDoScroll = window.scrollY;
+
     loadProjects();
-    console.log(topAtual)
-})
+
+    //Mantem o scroll na mesma posição de antes de inserir os novos projetos
+    window.scroll({top: topDoScroll})
+   
+});
+
+function scrollAnimation(){
+    const topAtual = window.pageYOffset;
+    animatedElements.forEach(element => {
+        if((topAtual - 30) > element.offsetTop){
+            element.classList.add('animate');
+        }
+    })
+
+}
+scrollAnimation();
+window.addEventListener('scroll', debounce(scrollAnimation, 20))
 
 
-{/* <div class="project">
-    <div class="project-upside">
-        <div class="glob">
-            <img src="imagens/icones/kanban.png" alt="">
-        </div>
-        <div>
-            <h4 class="project-title">Kanban</h4>
-            <p class="projetc-description">
-                Criei este projeto para praticar e obter novos
-                conhecimentos.
-            </p>
-            <div class="link-lang">
-                <a class="project-link" href=""><span>Ver projeto</span></a>
-                <div class="languages">
-                    <img class="languages-icon" src="imagens/logos/logoHTML.png" alt="logo css"></img>
-                    <img class="languages-icon" src="imagens/logos/logoCSS.png" alt="logo html"></img>
-                    <img class="languages-icon" src="imagens/logos/logoJS.png" alt="logo js"></img>
-                </div>
-            </div>
-        </div>
-    </div>
+//O Debounce impede que a função chapada pelo evento do scroll seja
+//chamada muitas vezes seguidas
 
-    <img class="project-cover" src="imagens/capas-dos-projetos/kanban2.png" alt="capa do projeto">
 
-        <p>Com o layout inspirado no Trello,
-            este site permite, criar cards, tags para os cards
-            e movê-los livremente na vertical e entre colunas.
-            &ldquo;Os dados são salvos no localstorage.&rdquo;
-        </p>
+function debounce(fn, wait){
+    //'fn' é a função que será executada
+    //'wait' é o tempo que essa função deve esperar para ser
+    //chamada novamente.
 
-</div> */}
+    //O timer é null aqui, para que a funão de retorno
+    //não os sobrescreva.
+    let timer = null;
+
+    return function(){
+        let context = this;
+        let args = arguments;
+
+        //Esse clearTimeout é quem, na verdade, impede a repetição da função
+        //Se o tempo para executar a função ainda não tiver terminado,
+        //ele anula a chamada da função.
+        clearTimeout(timer);
+
+        timer = setTimeout(function(){
+            //poderia ser feito assim:
+            //fn();
+
+            //Mas assim permite que qualquer função possa usar este debounce.
+            fn.apply(context, args);
+        }, wait)
+    }
+//Existe uma biblioteca própria pra isso 'Lodash'!
+}

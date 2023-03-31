@@ -18,7 +18,8 @@
         color: white;
     }
 
-    .project{
+    .project{  
+        opacity: 0;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
         font-weight: 400;
         overflow: hidden;
@@ -27,11 +28,12 @@
         height: 455px !important;
         background-color: rgb(255, 255, 255);
         border-radius: 10px;
-    }
 
-    .delay{
-        animation: delayCard 1000ms forwards; 
+        //opacity: 0;               
+    //     transform: translate3d(0, -60px, 0);  
+    //    transition: 300ms;           
     }
+   
 
 
     .project-upside{
@@ -147,9 +149,15 @@
     }
 }
 
-@keyframes delayCard {
-    0%{opacity: 0;}
-
+@keyframes animateIsert {
+    0%{
+        opacity: 0;
+        transform: translate3d(0, 60px, 0);  
+    }
+    100%{
+        opacity: 1;
+        transform: translate3d(0, 0px, 0);  
+    }
 }
 
 @media screen and (min-width: 960px){

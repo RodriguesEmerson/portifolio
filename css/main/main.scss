@@ -7,6 +7,6 @@
 @import '../sections/about';
 @import '../sections/contact';
 
-// html{
-//     scroll-behavior: smooth;
-// }
+.animate{
+    animation: animateIsert 500ms forwards;
+ }
