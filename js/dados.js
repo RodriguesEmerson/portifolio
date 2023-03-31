@@ -59,9 +59,9 @@ const datas = [
     },
 
     {
-    title: 'Portiólio de Fotos',
+    title: 'Portifólio de Fotos',
     imgGlob: `${icones}/photography.png`,
-    desc: 'Este projeto foi um divisor muito um divisor de águas.',
+    desc: 'Este projeto foi de grande aprendizado, aprendi mais do que esperava.',
     link: `${html}/photography-site/paginas/`,
     langs: ['HTML', 'CSS', 'JS'],
     respons: ['PC', 'CELL'],

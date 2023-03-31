@@ -1,10 +1,23 @@
 import datas from './dados.js';
 const projects = document.querySelector('#projects');
+const btnSeeMore = document.querySelector('#btn-see-more')
+
+let start = 0;
+let show = 3;
+let addMore = 2;
+if(window.innerWidth > 851){show = 5; addMore = 4};
+if(window.innerWidth > 1266){show = 8; addMore = 3};
+if(window.innerWidth > 1681){show = 11; addMore = 4};
+if(show >)
+
 //Fuções para carregar so projetos na página projetos.
 function loadProjects() {
 
-    datas.forEach(project => {
-
+    for (let i = start; i <= show; i++){
+        const project = datas[i];
+        start = i;
+    // }
+    // datas.forEach(project => {
         const divProject = document.createElement('div');
             divProject.setAttribute('class', 'project');
         const divProjectUpside = document.createElement('div');
@@ -73,12 +86,20 @@ function loadProjects() {
         divProject.appendChild(projectCover);
         divProject.appendChild(lastP);
 
-        projects.appendChild(divProject)
+        projects.appendChild(divProject);
+        divProject.classList.add('delay')
 
-    })
+    }
 }
 
 loadProjects();
+
+btnSeeMore.addEventListener('click', () => {
+    show = show + addMore;
+    const topAtual = projects.offsetTop;
+    loadProjects();
+    console.log(topAtual)
+})
 
 
 {/* <div class="project">
