@@ -7,6 +7,7 @@
   --second-color: #1E6BB6;
   --third-color: #8A11D3;
   --text-gray-color: #bababa;
+  --main-text-color: #393939;
 }
 
 @theme inline {
@@ -18,6 +19,7 @@
   --second-color: #1E6BB6;
   --third-color: #8A11D3;
   --text-gray-color: #bababa;
+  --main-text-color: #393939;
 }
 
 @media (prefers-color-scheme: dark) {

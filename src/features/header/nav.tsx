@@ -1,7 +1,7 @@
 'use client';
 import { DevArrow } from "@/components/UI/devArrow";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export type NavLinkType = {
    page: string, text: string
@@ -9,13 +9,43 @@ export type NavLinkType = {
 
 const navLinks: NavLinkType[] = [
    { page: 'home', text: 'Início' },
+   { page: 'about-me', text: 'Sobre mim' },
    { page: 'skills', text: 'Skills' },
    { page: 'projects', text: 'Projetos' },
    { page: 'contact', text: 'Contato' },
 ]
 
+const pages: string[] = ['home', 'about-me', 'skills', 'projects', 'contact'];
+
 export function Nav() {
    const [currentAnchor, setCurrentAcnhor] = useState<string>('home');
+
+   useEffect(() => {
+      const sections = document.querySelectorAll('section[id]');
+
+      if (!sections || sections.length == 0) return;
+
+      const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
+         entries.forEach(entry => {
+            if (entry.isIntersecting) {
+               const sectionId =  entry.target.id;
+               if(pages.includes(sectionId)){
+                  setCurrentAcnhor(sectionId);
+               }
+            }
+         });
+      }, {
+         root: null,
+         rootMargin: '0px',
+         threshold: 0.5 // Porcentagem do elemento que deve estar visível (50%)
+      })
+
+
+      sections.forEach(section => observer.observe(section));
+
+      return () => observer.disconnect(); //Clean up;
+   }, [])
+
    return (
       <>
          <nav>

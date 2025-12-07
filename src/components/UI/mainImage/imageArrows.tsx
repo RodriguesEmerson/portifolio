@@ -2,17 +2,16 @@
 import { DevArrow } from "@/components/UI/devArrow";
 import { useEffect, useState } from "react";
 
-
 export function ImageArrows() {
 
    const [scroll, setScroll] = useState<number>(0);
    function handleScroll(){
-      setScroll(Number(window.scrollY.toFixed(1)));
+      setScroll(Number(`${window.scrollY * 0.2}`));
    }
    useEffect(() => {
       window.addEventListener('scroll', handleScroll);
       
-      return () => window.removeEventListener('scroll', handleScroll)
+      return () => window.removeEventListener('scroll', handleScroll);
    }, [])
 
    return (
