@@ -18,8 +18,6 @@ const hardSkills: { title: string; skills: string[]; }[] = [
          "PHP (puro)",
          "Criação de APIs REST",
          "Autenticação com JWT",
-         "MySQL / MariaDB (modelagem, consultas e otimização básica)",
-         "Firebase"
       ]
    },
    {
@@ -27,8 +25,8 @@ const hardSkills: { title: string; skills: string[]; }[] = [
       skills: [
          "Modelagem relacional",
          "phpMyAdmin",
+         "MySQL / MariaDB (modelagem, consultas e otimização básica)",
          "Firestore – NoSQL",
-         "MySQL / MariaDB (modelagem, consultas e otimização básica)"
       ]
    },
    {

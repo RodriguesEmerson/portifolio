@@ -18,14 +18,14 @@ const projects: ProjectInterface[] = [
       name: 'Organizze',
       description: 'Site de organização de financeira pessoal. Com a criação de conta, autenticação JWT, relatórios mensais e anuais, possibilidade de adicionar, exluir e editar cada lançamento, além da possibilidade de alterar a categoria de todos os laçamentos de uma só vez. Todos os dados, tanto tabelas quanto as categorias tem seu CRUD completo.',
       image: 'organizze-image.avif',
-      technologies: ['next','js', 'tw', 'chartjs', 'php', 'mySQL', 'figma'],
+      technologies: ['next','js', 'tw', 'chartjs', 'php', 'mySQL','insomnia', 'figma'],
       projectLinks: [{ name: 'GitHub', link: 'https://github.com/RodriguesEmerson/organizze/' }]
    },
    {
       name: 'FotoSelect',
       description: 'Construí este projeto para aprender lidar com imagens em PHP e constraints no banco de dados, e pra não ficar apenas no insomnia, criei esta interface. Foram inúmeros aprendizados aqui, desde o backend e consumo de SDKs até o frontend. Nesse projeto também passei a usar DTOs (data transfer object) para validação dos dados. Também utilizei: Autenticação com JWT, urls_amigáveis, suporte a tokens passados tanto por cookies como por headersAuthorization, Middleware, Exeptions personalizados e Dispatch para validação e redirecionamento de rotas.',
       image: 'fotoselect-image.avif',
-      technologies: ['next','js', 'tw', 'php', 'mySQL', 'figma'],
+      technologies: ['next','js', 'tw', 'php', 'mySQL', 'insomnia', 'figma'],
       projectLinks: [{ name: 'GitHub', link: 'https://github.com/RodriguesEmerson/fotoselect/' }]
    },
    {
@@ -42,7 +42,7 @@ const projects: ProjectInterface[] = [
       technologies: ['next', 'ts', 'tw', 'figma'],
       projectLinks: [
          { name: 'GitHub', link: 'https://github.com/RodriguesEmerson/portifolio' },
-         { name: 'Deploy', link: 'https://www.ccbcifras.com/' }
+         { name: 'Deploy', link: '#' }
       ]
    },
 ]

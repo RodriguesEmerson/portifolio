@@ -9,13 +9,19 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.0.5",
+    "@hookform/resolvers": "^5.2.2",
+    "next": "^16.0.7",
     "react": "19.2.0",
     "react-dom": "19.2.0",
+    "react-hook-form": "^7.68.0",
+    "resend": "^6.6.0",
+    "zod": "^4.1.12",
     "zustand": "^5.0.9"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/grecaptcha": "^3.0.9",
+    "@types/gtag.js": "^0.0.20",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

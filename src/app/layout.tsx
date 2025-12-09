@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       title: 'Emerson Rodrigues, desenvolvedor fullstack - Portifólio',
       description: 'Portfólio de Emerson, desenvolvedor fullstack em formação. Projetos reais em PHP, Next.js, React, APIs REST, MySQL e Tailwind. Tecnologias modernas, código limpo e foco em soluções práticas..',
       url: process.env.NEXT_PUBLIC_SITE_URL,
-      siteName: "CCB Cifras",
+      siteName: "Emerson Rodigues desenvolvedor",
       images: [
          {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/share-image.png`,
@@ -63,7 +63,6 @@ export const metadata: Metadata = {
       ],
       apple: '/apple-touch-icon.png',
    },
-
 };
 
 export default function RootLayout({
