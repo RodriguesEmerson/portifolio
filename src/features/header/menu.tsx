@@ -17,7 +17,7 @@ const navLinks: NavLinkType[] = [
 
 const pages: string[] = ['home', 'about-me', 'skills', 'projects', 'contact'];
 
-export function Nav() {
+export function Menu() {
    const [currentAnchor, setCurrentAcnhor] = useState<string>('home');
 
    useEffect(() => {

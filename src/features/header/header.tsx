@@ -1,10 +1,11 @@
 import { PageModel } from "@/components/pageModel";
 import Image from "next/image";
-import { Nav } from "./nav";
+import { Menu } from "./menu";
+import { MenuMobile } from "./menu-bolile";
 
 export function Header() {
    return (
-      <header className="fixed top-0 left-0 z-100 border-b border-b-gray-800 w-screen flex justify-between items-center bg-(--main-color)">
+      <header className="fixed top-0 h-14 left-0 z-100 border-b border-b-gray-800 w-screen flex justify-between items-center bg-(--main-color)">
          <PageModel>
             <div className="flex justify-between items-center p-2 sm:px-3">
                <div>
@@ -12,8 +13,11 @@ export function Header() {
                      <Image src={"/erlogo.avif"} width={200} height={50} alt="Logo do site Emerson Rodrigues Desenvolvedor Fullstack" priority/>
                   </div>
                </div>
-               <div className="mr-3">
-                  <Nav />
+               <div className="max-[900px]:hidden mr-3">
+                  <Menu />
+               </div>
+               <div className="min-[900px]:hidden">
+                  <MenuMobile />
                </div>
             </div>
          </PageModel>

@@ -29,7 +29,7 @@ const projects: ProjectInterface[] = [
       projectLinks: [{ name: 'GitHub', link: 'https://github.com/RodriguesEmerson/fotoselect/' }]
    },
    {
-      name: 'API em PHP',
+      name: 'API Rest em PHP',
       description: 'Criei essa API para aprender mais sobre APIs e melhorar a estrutura do backend. Um projeto bem organizado, tanto na questão da estrutura e fluxo dos dados, quanto na documentação, usando padrão PHPDoc e um readme bem completo, pois meu foco aqui era criar um projeto de código_limpo, seguro e manutenível. Utilizei: php 8.2, xampp e composer. Para facilitar a importação de classes e métodos usei namespaces.',
       image: 'api-php-image.avif',
       technologies: ['php', 'mySQL', 'insomnia'],
