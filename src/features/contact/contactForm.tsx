@@ -42,7 +42,7 @@ export function ContactForm() {
    }
 
    return (
-      <div>
+      <div className="relative">
          <form className="flex flex-col gap-1 max-w-[95vw] w-100 bg-[#8A11D310] p-2 rounded-md shadow-[0px_0px_20px_3px_rgba(0,0,0,0.01)]" onSubmit={handleSubmit(handleSendMessage)}>
             <DefaultTextInput label="Nome" {...register('name')} error={errors.name} />
             <DefaultTextInput label="Assunto" {...register('subject')} error={errors.subject} />
@@ -57,7 +57,7 @@ export function ContactForm() {
             </button>
          </form>
          {wasEmailSent &&
-            <div className="text-center">
+            <div className="flex justify-center w-full text-center absolute -bottom-3 left-0">
                {wasEmailSent === 'y'
                   ? <span className="text-xs text-green-700">Mensagem enviada. Responderei assim que possível!</span>
                   : <span className="text-xs text-red-800">Erro ao enviar sua mensagem.</span>

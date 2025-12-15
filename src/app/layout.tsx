@@ -1,32 +1,33 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto, Roboto_Mono } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-   variable: "--font-geist-sans",
-   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-   variable: "--font-geist-mono",
-   subsets: ["latin"],
-});
 
 const robotoMono = Roboto_Mono({
    variable: "--font-roboto-mono",
    subsets: ["latin"],
    weight: ["100", "200", "300", "400", "500", "600", "700"]
 });
-const robotoSans = Roboto({
-   variable: "--font-roboto",
-   subsets: ["latin"],
-   weight: ["100", "200", "300", "400", "500", "600", "700"]
-});
 
-// CONFIGURANDO METADATA
 export const metadata: Metadata = {
-   title: "Emerson Rodrigues, desenvolvedor fullstack - Portifólio",
+   title: "Emerson Rodrigues - Portifólio desenvolvedor fullstack ",
    description: "Portfólio de Emerson, desenvolvedor fullstack em formação. Projetos reais em PHP, Next.js, React, APIs REST, MySQL e Tailwind. Tecnologias modernas, código limpo e foco em soluções práticas.",
+
+   alternates:{
+      canonical: `${process.env.NEXT_PUBLIC_SITE_URL}`
+   },
+
+   keywords: [
+      'Portfólio',
+      'Desenvolvedor Full Stack',
+      'Next.js',
+      'React',
+      'PHP',
+      'JavaScript',
+      'Frontend',
+      'Backend',
+      'Web Developer'
+   ],
 
    openGraph: {
       title: 'Emerson Rodrigues, desenvolvedor fullstack - Portifólio',
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
       siteName: "Emerson Rodigues desenvolvedor",
       images: [
          {
-            url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/share-image.png`,
+            url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/share-image.avif`,
             width: 210,
             height: 210,
             alt: "Prévia do Site",
@@ -76,6 +77,7 @@ export default function RootLayout({
             className={`${robotoMono.variable} ${robotoMono.variable} antialiased`}
          >
             {children}
+            <Analytics />
          </body>
       </html>
    );

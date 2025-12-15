@@ -21,7 +21,7 @@ export function MainImage({ includeArrows = false, size = 'xl' }: { includeArrow
             <div 
                className={`absolute top-[8%] left-[8%] w-[83%] h-[83%] ${size==='xl' ? 'min-[1205px]:top-7 min-[1205px]:left-7 max-w-77 max-h-77' : ''}  rounded-full overflow-hidden z-10`}
             >
-               <Image src={'/images/profile.avif'} priority height={200} width={200} alt="Emerson Rodrigues image"
+               <Image src={'/images/profile.avif'} priority height={200} width={200} alt="Emerson Rodrigues image" fetchPriority="high"
                   className="w-full"
                />
             </div>

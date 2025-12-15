@@ -84,42 +84,42 @@ const emailHtmlModel = `<!DOCTYPE html>
 `
 
 export async function sendEmail(formData: any) {
-   try {
-      // Validate with zod. It is going to throw an error if is something wrong.
-      const validetedBody = contactSchema.parse(formData);
+  try {
+    // Validate with zod. It is going to throw an error if is something wrong.
+    const validetedBody = contactSchema.parse(formData);
 
-      if ((validetedBody.phone && validetedBody.phone.trim() !== "") || !validetedBody.captchaToken) {
-         return { message: "Ignored", ok: false }
-      }
+    if ((validetedBody.phone && validetedBody.phone.trim() !== "") || !validetedBody.captchaToken) {
+      return { message: "Ignored", ok: false }
+    }
 
-      const isValidCaptcha = await validateCaptcha(validetedBody.captchaToken);
-      if (!isValidCaptcha) {
-         return { message: "Robot", ok: false }
-      }
+    const isValidCaptcha = await validateCaptcha(validetedBody.captchaToken);
+    if (!isValidCaptcha) {
+      return { message: "Robot", ok: false }
+    }
 
-      const emailHTML = emailHtmlModel
-         .replace('{{name}}', `${validetedBody.name.replaceAll('<', '').replace('>', '')}`)
-         .replace('{{email}}', `${validetedBody.email.replaceAll('<', '').replace('>', '')}`)
-         .replace('{{subject}}', `${validetedBody.subject.replaceAll('<', '').replace('>', '')}`)
-         .replace('{{message}}', `${validetedBody.message.replaceAll('<', '').replace('>', '')}`);
+    const emailHTML = emailHtmlModel
+      .replace('{{name}}', `${validetedBody.name.replaceAll('<', '').replace('>', '')}`)
+      .replace('{{email}}', `${validetedBody.email.replaceAll('<', '').replace('>', '')}`)
+      .replace('{{subject}}', `${validetedBody.subject.replaceAll('<', '').replace('>', '')}`)
+      .replace('{{message}}', `${validetedBody.message.replaceAll('<', '').replace('>', '')}`);
 
-      const { data, error } = await resend.emails.send({
-         from: 'onboarding@resend.dev',
-         to: 'emersonkener45@gmail.com',
-         subject: 'Email do Portifólio',
-         html: emailHTML
-      });
+    const { data, error } = await resend.emails.send({
+      from: 'onboarding@resend.dev',
+      to: `${process.env.CONTACT_EMAIL}`,
+      subject: 'Email do Portifólio',
+      html: emailHTML
+    });
 
-      if (error) {
-         return { message: "Server error", ok: false }
-      }
-
-      return { message: "Sent", ok: true }
-   } catch (e: unknown) {
-      if (e instanceof z.ZodError) {
-         return { message: "Invalid fields", ok: false }
-      }
-
+    if (error) {
       return { message: "Server error", ok: false }
-   }
+    }
+
+    return { message: "Sent", ok: true }
+  } catch (e: unknown) {
+    if (e instanceof z.ZodError) {
+      return { message: "Invalid fields", ok: false }
+    }
+
+    return { message: "Server error", ok: false }
+  }
 }
