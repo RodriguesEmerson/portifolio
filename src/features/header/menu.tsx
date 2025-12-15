@@ -1,5 +1,6 @@
 'use client';
 import { DevArrow } from "@/components/UI/devArrow";
+import { hiddeReCaptchaBox, showReCaptchaBox } from "@/utils/captchaPositionHandle";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -28,9 +29,11 @@ export function Menu() {
       const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
          entries.forEach(entry => {
             if (entry.isIntersecting) {
-               const sectionId =  entry.target.id;
-               if(pages.includes(sectionId)){
+               const sectionId = entry.target.id;
+               if (pages.includes(sectionId)) {
                   setCurrentAcnhor(sectionId);
+                  if (sectionId !== 'contact') return hiddeReCaptchaBox();
+                  showReCaptchaBox();
                }
             }
          });

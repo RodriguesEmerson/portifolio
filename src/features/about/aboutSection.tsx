@@ -3,11 +3,11 @@ import { PageModel } from "@/components/pageModel";
 export function AboutSection() {
    return (
       <PageModel model="white" id="about-me" trasnsitionImg={true}>
-         <div className="flex flex-col gap-3 min-h-[93vh] pt-5 px-2 pb-11">
+         <div className="flex flex-col gap-3 min-h-[93vh] pt-5 pb-11 px-2">
             <div className="flex flex-row gap-2 items-center bg-[#8A11D310] px-2 rounded-md">
                <h2 className="text-2xl w-fit py-2 font-bold bg-linear-to-r from-(--third-color) to-(--second-color) bg-clip-text text-transparent">Sobre mim</h2>
             </div>
-            <div className="flex flex-col gap-2 text-(--main-text-color) py-2 max-w-[700px] mx-auto indent-5">
+            <div className="flex flex-col gap-2 text-(--main-text-color) p-2 max-w-[700px] mx-auto indent-5">
                <p>
                   Sou Emerson, <strong>desenvolvedor fullstack em formação e apaixonado por resolver problemas através da tecnologia</strong>. Minha jornada sempre teve um ponto em comum: criar do zero e transformar ideias em algo real.
                </p>

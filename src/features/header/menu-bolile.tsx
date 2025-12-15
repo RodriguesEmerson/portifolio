@@ -1,5 +1,6 @@
 'use client';
 import { ArrowRightIcon } from "@/components/UI/icons/arrowRightIcon";
+import { hiddeReCaptchaBox, showReCaptchaBox } from "@/utils/captchaPositionHandle";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -32,6 +33,8 @@ export function MenuMobile() {
                const sectionId = entry.target.id;
                if (pages.includes(sectionId)) {
                   setCurrentAcnhor(sectionId);
+                  if(sectionId !== 'contact') return hiddeReCaptchaBox();
+                  showReCaptchaBox();
                }
             }
          });
